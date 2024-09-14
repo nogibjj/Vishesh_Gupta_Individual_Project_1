@@ -1,7 +1,4 @@
-import pandas as pd
-import matplotlib.pyplot as plt
 from mylib.help_functions import load_team_data, get_statistics, get_median_stats, filter_top_n_teams, plot_wins, calculate_team_percentages, plot_team_percentages
-
 
 def main(file_path_input, top_teams_input, team_name_input, games_per_season_input):
     # Load data
