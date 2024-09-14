@@ -8,3 +8,5 @@
 | 50%   | 26       |  5       |      17.5     |         0.684211 |                0.460526  |
 | 75%   | 28       |  7.25    |      19.25    |         0.736842 |                0.506579  |
 | max   | 28       | 12       |      24       |         0.736842 |                0.631579  |
+![Top Teams Wins](top_teams_wins.png)
+![Win and Clean Sheet Percentages](win_clean_sheet_relation.png)
