@@ -20,7 +20,7 @@ generate_and_push:
 	@if [ -n "$$(git status --porcelain)" ]; then \
 		git config --local user.email "action@github.com"; \
 		git config --local user.name "GitHub Action"; \
-		git add . \
+		git add top_teams_wins.png win_clean_sheet_relation.png; \
 		git commit -m "Add generated plot"; \
 		git push; \
 	else \

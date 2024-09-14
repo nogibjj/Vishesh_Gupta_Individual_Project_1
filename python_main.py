@@ -34,8 +34,8 @@ def plot_team_percentages(team_percentages_data):
 
 def save_to_md():
     with open("summary_statistics.md", "a") as file:
-        file.write("top_teams_wins.png")
-        file.write("win_clean_sheet_relation.png")
+        file.write("![Top Teams Wins](top_teams_wins.png)\n")
+        file.write("![Win and Clean Sheet Percentages](win_clean_sheet_relation.png)\n")
 
 
 def main(file_path_input, top_teams_input, team_name_input, games_per_season_input):
