@@ -20,5 +20,5 @@ generate_and_push:
 	git config --local user.email "action@github.com"; \
 	git config --local user.name "GitHub Action"; \
 	git add top_teams_wins.png win_clean_sheet_relation.png; \
-	git commit -m "Add generated plot"; \
+	git commit -m "Add generated plots"; \
 	git push; \
