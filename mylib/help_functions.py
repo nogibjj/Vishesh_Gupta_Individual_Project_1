@@ -45,27 +45,3 @@ def calculate_team_percentages(team_data, team_name, games_per_season):
         team_specific["clean_sheet"] / games_per_season
     )
     return team_specific
-
-# Function to plot win and clean sheet percentages
-def plot_team_percentages(team_percentages_data):
-    plt.figure(figsize=(10, 6))
-    plt.plot(
-        team_percentages_data["season"],
-        team_percentages_data["win_percentage"],
-        label="Win Percentage",
-        marker="o",
-    )
-    plt.plot(
-        team_percentages_data["season"],
-        team_percentages_data["clean_sheet_percentage"],
-        label="Clean Sheet Percentage",
-        marker="o",
-    )
-
-    plt.xlabel("Season")
-    plt.ylabel("Percentage")
-    plt.title("Comparison of Win Percentage and Clean Sheet Percentage")
-    plt.xticks(rotation=45)
-    plt.legend()
-    plt.tight_layout()
-    plt.show()

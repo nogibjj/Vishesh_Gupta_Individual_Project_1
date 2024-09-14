@@ -1,4 +1,29 @@
-from mylib.help_functions import load_team_data, get_statistics, get_median_stats, filter_top_n_teams, plot_wins, calculate_team_percentages, plot_team_percentages
+from mylib.help_functions import load_team_data, get_statistics, get_median_stats, filter_top_n_teams, plot_wins, calculate_team_percentages
+import matplotlib.pyplot as plt
+
+# Function to plot win and clean sheet percentages
+def plot_team_percentages(team_percentages_data):
+    plt.figure(figsize=(10, 6))
+    plt.plot(
+        team_percentages_data["season"],
+        team_percentages_data["win_percentage"],
+        label="Win Percentage",
+        marker="o",
+    )
+    plt.plot(
+        team_percentages_data["season"],
+        team_percentages_data["clean_sheet_percentage"],
+        label="Clean Sheet Percentage",
+        marker="o",
+    )
+
+    plt.xlabel("Season")
+    plt.ylabel("Percentage")
+    plt.title("Comparison of Win Percentage and Clean Sheet Percentage")
+    plt.xticks(rotation=45)
+    plt.legend()
+    plt.tight_layout()
+    plt.show()
 
 def main(file_path_input, top_teams_input, team_name_input, games_per_season_input):
     # Load data

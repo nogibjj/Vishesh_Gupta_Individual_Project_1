@@ -8,6 +8,6 @@ lint:
 	pylint --disable=R,C --ignore-patterns=test_.*?py *.py
 
 test:
-	python -m pytest -cov=main test_main.py
+	python -m pytest -vv --nbval -cov=mylib -cov=main test_*.py *.ipynb
 
 all: install format lint test
