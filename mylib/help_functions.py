@@ -33,8 +33,7 @@ def plot_wins(top_teams_data):
     plt.grid(True)
     plt.xticks(rotation=45)
     plt.tight_layout()
-    plt.savefig("top_teams_wins.png")
-    plt.close()
+    plt.show()
 
 # Function to calculate win and clean sheet percentages for a team
 def calculate_team_percentages(team_data, team_name, games_per_season):
@@ -69,5 +68,4 @@ def plot_team_percentages(team_percentages_data):
     plt.xticks(rotation=45)
     plt.legend()
     plt.tight_layout()
-    plt.savefig("win_clean_sheet_relation.png")
-    plt.close()
+    plt.show()
