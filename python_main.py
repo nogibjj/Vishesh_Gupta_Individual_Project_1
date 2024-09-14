@@ -96,8 +96,8 @@ def main(file_path_input, top_teams_input, team_name_input, games_per_season_inp
 
 if __name__ == "__main__":
     # File path and variables
-    file_path_input = "stats.csv"
-    top_teams_input = [
+    file_path_input_main = "stats.csv"
+    top_teams_input_main = [
         "Manchester United",
         "Chelsea",
         "Liverpool",
@@ -105,8 +105,8 @@ if __name__ == "__main__":
         "Tottenham Hotspur",
         "Manchester City",
     ]
-    team_name_input = "Manchester United"
-    games_per_season_input = 38.0
+    team_name_input_main = "Manchester United"
+    games_per_season_input_main = 38.0
 
     # Run main function
-    main(file_path_input, top_teams_input, team_name_input, games_per_season_input)
+    main(file_path_input_main, top_teams_input_main, team_name_input_main, games_per_season_input_main)
