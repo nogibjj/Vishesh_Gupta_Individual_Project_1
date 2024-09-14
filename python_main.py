@@ -72,9 +72,9 @@ def plot_team_percentages(team_percentages_data):
     plt.savefig("win_clean_sheet_relation.png")
     plt.close()
 
-def main(data_file_path, top_teams_list, selected_team_name, games_per_season_value):
+def main(file_path_input, top_teams_input, team_name_input, games_per_season_input):
     # Load data
-    team_data = load_team_data(data_file_path)
+    team_data = load_team_data(file_path_input)
 
     # Get stats
     print(get_statistics(team_data))
@@ -85,19 +85,19 @@ def main(data_file_path, top_teams_list, selected_team_name, games_per_season_va
     )
 
     # Filter top teams and plot
-    top_teams_data = filter_top_n_teams(team_data, top_teams_list)
+    top_teams_data = filter_top_n_teams(team_data, top_teams_input)
     plot_wins(top_teams_data)
 
     # Calculate and plot win and clean sheet percentages for the selected team
     team_percentages_data = calculate_team_percentages(
-        team_data, selected_team_name, games_per_season_value
+        team_data, team_name_input, games_per_season_input
     )
     plot_team_percentages(team_percentages_data)
 
 if __name__ == "__main__":
     # File path and variables
-    data_file_path = "stats.csv"
-    top_teams_list = [
+    file_path_input = "stats.csv"
+    top_teams_input = [
         "Manchester United",
         "Chelsea",
         "Liverpool",
@@ -105,8 +105,8 @@ if __name__ == "__main__":
         "Tottenham Hotspur",
         "Manchester City",
     ]
-    selected_team_name = "Manchester United"
-    games_per_season_value = 38.0
+    team_name_input = "Manchester United"
+    games_per_season_input = 38.0
 
     # Run main function
-    main(data_file_path, top_teams_list, selected_team_name, games_per_season_value)
+    main(file_path_input, top_teams_input, team_name_input, games_per_season_input)
