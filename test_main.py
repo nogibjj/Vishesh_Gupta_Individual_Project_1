@@ -1,12 +1,5 @@
 import pandas as pd
-from python_main import (
-    load_team_data,
-    get_statistics,
-    get_median_stats,
-    filter_top_n_teams,
-    calculate_team_percentages,
-    plot_team_percentages,
-)
+from mylib.help_functions import load_team_data, get_statistics, get_median_stats, filter_top_n_teams, calculate_team_percentages, plot_team_percentages
 from io import StringIO
 import matplotlib.pyplot as plt
 
