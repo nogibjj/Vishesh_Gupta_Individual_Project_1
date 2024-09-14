@@ -12,8 +12,7 @@ lint:
 
 # Test notebook and Python files using pytest and nbval for notebook
 test:
-	pytest --nbval main_python.ipynb -cov=main test_main.py 
+	pytest --nbval python_main_notebook.ipynb -cov=main test_main.py 
 
 # Run all commands in sequence
 all: install format lint test
-
