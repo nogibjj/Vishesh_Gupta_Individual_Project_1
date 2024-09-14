@@ -32,13 +32,10 @@ def plot_team_percentages(team_percentages_data):
     plt.tight_layout()
     plt.show()
 
-def save_to_md(file_path_input):
-    team_data = load_team_data(file_path_input)
-    markdown_table1 = get_statistics(team_data)
-    with open("Data_summary.md", "w", encoding="utf-8") as file:
+def save_to_md():
+    with open("Data_summary.md", "a", encoding="utf-8") as file:
         file.write("![Top Teams Wins](top_teams_wins.png)\n")
         file.write("![Win and Clean Sheet Percentages](win_clean_sheet_relation.png)\n")
-        file.write(markdown_table1)
 
 
 def main(file_path_input, top_teams_input, team_name_input, games_per_season_input):
@@ -85,4 +82,4 @@ if __name__ == "__main__":
         team_name_input_main,
         games_per_season_input_main,
     )
-    save_to_md(file_path_input_main)
+    save_to_md()
