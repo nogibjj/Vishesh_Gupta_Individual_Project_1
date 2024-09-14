@@ -7,7 +7,22 @@ format:
 lint:
 	ruff check *.py
 
+container-lint:
+	docker run --rm -i hadolint/hadolint < Dockerfile
+
 test:
 	python -m pytest -vv --nbval -cov=mylib -cov=main test_*.py *.ipynb
 
 all: install format lint test
+
+generate_and_push:
+	python python_main.py 
+	@if [ -n "$$(git status --porcelain)" ]; then \
+		git config --local user.email "action@github.com"; \
+		git config --local user.name "GitHub Action"; \
+		git add . \
+		git commit -m "Add generated plot"; \
+		git push; \
+	else \
+		echo "No changes to commit. Skipping commit and push."; \
+	fi
