@@ -70,7 +70,6 @@ def main(file_path_input, top_teams_input, team_name_input, games_per_season_inp
     team_data = load_team_data(file_path_input)
 
     # Get stats
-    '''
     
     print(get_statistics(team_data))
     print(
@@ -89,7 +88,6 @@ def main(file_path_input, top_teams_input, team_name_input, games_per_season_inp
     )
     
     plot_team_percentages(team_percentages_data)
-    '''
     save_to_md(team_data, "wins", "losses")
 
 if __name__ == "__main__":
