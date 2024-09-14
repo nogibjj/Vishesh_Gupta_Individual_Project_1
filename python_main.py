@@ -32,10 +32,36 @@ def plot_team_percentages(team_percentages_data):
     plt.tight_layout()
     plt.show()
 
-def save_to_md():
-    with open("summary_statistics.md", "a", encoding="utf-8") as file:
-        file.write("\n")
-        file.write("![Top Teams Wins](top_teams_wins.png)\n")
+def table_format(text):
+    """format to md pandas describe function"""
+    table = "| Statistics | Value |\n| ----- | ----- |\n"
+    for i in text.split(" "):
+        for j in i.split("\n"):
+            if j == "Name:":
+                return table
+            elif j == "":
+                pass
+            elif j[0].isdigit() and j[-1].isdigit():
+                digit = float(j)
+                table += f"{digit:.2f} |\n"
+
+            else:
+                table += f"| {j} | "
+
+def save_to_md(team_data, x, y):
+    stats_x = get_statistics(team_data[x])
+    stats_y = get_statistics(team_data[y])
+    markdown_stats_x = table_format(str(stats_x))
+    markdown_stats_y = table_format(str(stats_y))
+    with open("report.md", "w", encoding="utf-8") as file:
+        file.write(f"### Describe {x}:\n")
+        file.write(markdown_stats_x)
+        file.write("\n\n")  # Add a new line
+        file.write(f"### Describe {y}:\n")
+        file.write(markdown_stats_y)
+        file.write("\n\n")  # Add a new line
+        file.write("![Top Teams Wins](top_teams_wins.png)")
+        file.write("\n\n")  # Add a new line
         file.write("![Win and Clean Sheet Percentages](win_clean_sheet_relation.png)\n")
 
 
@@ -60,7 +86,7 @@ def main(file_path_input, top_teams_input, team_name_input, games_per_season_inp
         team_data, team_name_input, games_per_season_input
     )
     plot_team_percentages(team_percentages_data)
-
+    save_to_md(team_data, "wins", "losses")
 
 if __name__ == "__main__":
     # File path and variables
@@ -83,4 +109,3 @@ if __name__ == "__main__":
         team_name_input_main,
         games_per_season_input_main,
     )
-    save_to_md()
