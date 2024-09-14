@@ -1,4 +1,11 @@
-from mylib.help_functions import load_team_data, get_statistics, get_median_stats, filter_top_n_teams, plot_wins, calculate_team_percentages
+from mylib.help_functions import (
+    load_team_data,
+    get_statistics,
+    get_median_stats,
+    filter_top_n_teams,
+    plot_wins,
+    calculate_team_percentages,
+)
 import matplotlib.pyplot as plt
 
 # Function to plot win and clean sheet percentages
@@ -25,6 +32,7 @@ def plot_team_percentages(team_percentages_data):
     plt.tight_layout()
     plt.show()
 
+
 def main(file_path_input, top_teams_input, team_name_input, games_per_season_input):
     # Load data
     team_data = load_team_data(file_path_input)
@@ -47,6 +55,7 @@ def main(file_path_input, top_teams_input, team_name_input, games_per_season_inp
     )
     plot_team_percentages(team_percentages_data)
 
+
 if __name__ == "__main__":
     # File path and variables
     file_path_input_main = "stats.csv"
@@ -62,4 +71,9 @@ if __name__ == "__main__":
     games_per_season_input_main = 38.0
 
     # Run main function
-    main(file_path_input_main, top_teams_input_main, team_name_input_main, games_per_season_input_main)
+    main(
+        file_path_input_main,
+        top_teams_input_main,
+        team_name_input_main,
+        games_per_season_input_main,
+    )

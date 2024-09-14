@@ -1,7 +1,12 @@
 import pandas as pd
-from mylib.help_functions import load_team_data, get_statistics, get_median_stats, filter_top_n_teams, calculate_team_percentages
+from mylib.help_functions import (
+    load_team_data,
+    get_statistics,
+    get_median_stats,
+    filter_top_n_teams,
+    calculate_team_percentages,
+)
 from io import StringIO
-import matplotlib.pyplot as plt
 
 
 def test_load_team_data():
@@ -96,13 +101,9 @@ Liverpool,23,7,2023,14"""
     ), "Clean sheet percentage is not as expected"
 
 
-
-
-
 if __name__ == "__main__":
     test_load_team_data()
     test_get_statistics()
     test_get_median_stats()
     test_calculate_team_percentages()
-    test_plot_team_percentages()
     test_filter_top_n_teams()

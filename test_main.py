@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 from io import StringIO
 import pandas as pd
 
+
 def test_plot_team_percentages():
     csv_data = """team,wins,losses,season,clean_sheet
 Manchester United,28,5,2023,15
@@ -25,6 +26,7 @@ Manchester United,26,6,2022,13"""
         print(f"Plot failed: {e}")
 
     assert plot_success, "Plotting function failed to execute properly"
+
 
 if __name__ == "__main__":
     test_plot_team_percentages()
